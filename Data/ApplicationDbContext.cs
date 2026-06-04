@@ -4,9 +4,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LP3.BlazorServer.Data;
 
-public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : IdentityDbContext<ApplicationUser>(options)
+public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : 
+IdentityDbContext<ApplicationUser>(options)
 {
     public DbSet<Estudiante> Estudiantes => Set<Estudiante>();
-	public DbSet<Curso> Cursos => Set<Curso>();
-	public DbSet<Matriculacion> Matriculaciones => Set<Matriculacion>();
+    public DbSet<Curso> Cursos => Set<Curso>();
+    public DbSet<Matriculacion> Matriculaciones => Set<Matriculacion>();
+
+    public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+    {
+        return base.SaveChangesAsync(cancellationToken);
+    }
 }

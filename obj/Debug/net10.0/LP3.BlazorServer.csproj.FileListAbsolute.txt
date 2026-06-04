@@ -2,7 +2,6 @@ C:\LP3.BlazorServer\LP3.BlazorServer\bin\Debug\net10.0\appsettings.Development.j
 C:\LP3.BlazorServer\LP3.BlazorServer\bin\Debug\net10.0\appsettings.json
 C:\LP3.BlazorServer\LP3.BlazorServer\bin\Debug\net10.0\LP3.BlazorServer.staticwebassets.runtime.json
 C:\LP3.BlazorServer\LP3.BlazorServer\bin\Debug\net10.0\LP3.BlazorServer.staticwebassets.endpoints.json
-C:\LP3.BlazorServer\LP3.BlazorServer\bin\Debug\net10.0\Data\app.db
 C:\LP3.BlazorServer\LP3.BlazorServer\bin\Debug\net10.0\LP3.BlazorServer.exe
 C:\LP3.BlazorServer\LP3.BlazorServer\bin\Debug\net10.0\LP3.BlazorServer.deps.json
 C:\LP3.BlazorServer\LP3.BlazorServer\bin\Debug\net10.0\LP3.BlazorServer.runtimeconfig.json
@@ -205,3 +204,4 @@ C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\refint\LP3.BlazorServer.d
 C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\LP3.BlazorServer.pdb
 C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\LP3.BlazorServer.genruntimeconfig.cache
 C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\ref\LP3.BlazorServer.dll
+C:\LP3.BlazorServer\LP3.BlazorServer\bin\Debug\net10.0\Data\app.db
