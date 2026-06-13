@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "9BhWSHWCTVE=",
+  "dgSpecHash": "0p6iWHFOlMU=",
   "success": true,
   "projectFilePath": "C:\\LP3.BlazorServer\\LP3.BlazorServer\\LP3.BlazorServer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kjgam\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
-    "C:\\Users\\kjgam\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.8\\microsoft.aspnetcore.app.internal.assets.10.0.8.nupkg.sha512",
+    "C:\\Users\\kjgam\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.9\\microsoft.aspnetcore.app.internal.assets.10.0.9.nupkg.sha512",
     "C:\\Users\\kjgam\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\10.0.8\\microsoft.aspnetcore.diagnostics.entityframeworkcore.10.0.8.nupkg.sha512",
     "C:\\Users\\kjgam\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\10.0.8\\microsoft.aspnetcore.identity.entityframeworkcore.10.0.8.nupkg.sha512",
     "C:\\Users\\kjgam\\.nuget\\packages\\microsoft.build.framework\\18.0.2\\microsoft.build.framework.18.0.2.nupkg.sha512",
