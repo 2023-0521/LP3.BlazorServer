@@ -4,6 +4,6 @@ using LP3.BlazorServer.Shared.DTOs;
 
 public interface ICursoRepository : IRepository<Curso>
 {
-    Task<CursoDto?> GetByCodigoAsync(string codigo);
+    Task<Curso?> GetByCodigoAsync(string codigo);
     Task<Curso?> GetByMatriculaAsync(string matricula);
 }

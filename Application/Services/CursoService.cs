@@ -4,39 +4,58 @@ using LP3.BlazorServer.Shared.DTOs;
 using LP3.BlazorServer.Shared.Extensions;
 
 namespace LP3.BlazorServer.Application.Services;
-public class CursoService(ICursoRepository  CursoRepository): ICursoService
+
+public class CursoService(ICursoRepository cursoRepository) : ICursoService
 {
     public async Task<ICollection<CursoDto>> GetAll()
     {
-        var Curso1 = await CursoRepository.ListAsync();
-        return Curso1.Select(c => c.ToDto()).ToList();
+        var cursos = await cursoRepository.ListAsync();
+        return cursos.Select(c => new CursoDto
+        {
+            Nombre = c.Nombre,
+            Codigo = c.Codigo,
+            Creditos = c.Creditos,
+            Activo = c.Activo
+        }).ToList();
     }
 
     public async Task<CursoDto?> GetByIdAsync(int id)
     {
-        var Curso2 = await CursoRepository.GetByIdAsync(id);
-        return Curso2?.ToDto();
+        var curso = await cursoRepository.GetByIdAsync(id);
+        return curso == null ? null : new CursoDto
+        {
+            Nombre = curso.Nombre,
+            Codigo = curso.Codigo,
+            Creditos = curso.Creditos,
+            Activo = curso.Activo
+        };
     }
 
-   public async Task<CursoDto?> GetByCodigoAsync(string codigo)
+    public async Task<CursoDto?> GetByCodigoAsync(string codigo)
     {
-        var Curso3 = await CursoRepository.GetByCodigoAsync(codigo);
-        return Curso3?.ToDto();
+        var curso = await cursoRepository.GetByCodigoAsync(codigo);
+        return curso == null ? null : new CursoDto
+        {
+            Nombre = curso.Nombre,
+            Codigo = curso.Codigo,
+            Creditos = curso.Creditos,
+            Activo = curso.Activo
+        };
     }
 
     public async Task<bool> CreateAsync(CursoDto dto)
     {
         try
         {
-            var Curso = new Curso
+            var curso = new Curso
             {
-                Nombre      = dto.Nombre,
-                Codigo      = dto.Codigo,
-                Creditos    = dto.Creditos,
-                Activo      = dto.Activo
+                Nombre = dto.Nombre,
+                Codigo = dto.Codigo,
+                Creditos = dto.Creditos,
+                Activo = dto.Activo
             };
 
-            await CursoRepository.AddAsync(Curso);
+            await cursoRepository.AddAsync(curso);
             return true;
         }
         catch
@@ -49,15 +68,17 @@ public class CursoService(ICursoRepository  CursoRepository): ICursoService
     {
         try
         {
-            var Curso = await CursoRepository.GetByIdAsync(id);
-            if (Curso == null) return false;
+            var curso = await cursoRepository.GetByIdAsync(id);
 
-            Curso.Nombre = dto.Nombre;
-            Curso.Codigo = dto.Codigo;
-            Curso.Creditos = dto.Creditos;
-            Curso.Activo = dto.Activo;
+            if (curso == null)
+                return false;
 
-            await CursoRepository.Update(Curso);
+            curso.Nombre = dto.Nombre;
+            curso.Codigo = dto.Codigo;
+            curso.Creditos = dto.Creditos;
+            curso.Activo = dto.Activo;
+
+            await cursoRepository.Update(curso);
             return true;
         }
         catch
@@ -70,10 +91,12 @@ public class CursoService(ICursoRepository  CursoRepository): ICursoService
     {
         try
         {
-            var Curso = await CursoRepository.GetByIdAsync(id);
-            if (Curso == null) return false;
+            var curso = await cursoRepository.GetByIdAsync(id);
 
-            await CursoRepository.Remove(Curso);
+            if (curso == null)
+                return false;
+
+            await cursoRepository.Remove(curso);
             return true;
         }
         catch
