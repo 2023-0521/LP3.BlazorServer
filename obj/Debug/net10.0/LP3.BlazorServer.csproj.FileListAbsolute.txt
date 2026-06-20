@@ -133,7 +133,6 @@ C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\LP3.BlazorServer.Assembly
 C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\LP3.BlazorServer.AssemblyInfo.cs
 C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\LP3.BlazorServer.csproj.CoreCompileInputs.cache
 C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\LP3.BlazorServer.MvcApplicationPartsAssemblyInfo.cache
-C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\LP3.BlazorServer.sourcelink.json
 C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\rjimswa.dswa.cache.json
 C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
 C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
@@ -142,7 +141,6 @@ C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\scopedcss\Components\Layo
 C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\scopedcss\Components\Layout\ReconnectModal.razor.rz.scp.css
 C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\scopedcss\bundle\LP3.BlazorServer.styles.css
 C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\scopedcss\projectbundle\LP3.BlazorServer.bundle.scp.css
-C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\compressed\kr42gcgdt0-{0}-khy4lop6wu-khy4lop6wu.gz
 C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\compressed\qvk1xnzo8v-{0}-bqjiyaj88i-bqjiyaj88i.gz
 C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\compressed\05wegsiad1-{0}-c2jlpeoesf-c2jlpeoesf.gz
 C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\compressed\j3dwunwcsb-{0}-erw9l3u2r3-erw9l3u2r3.gz
@@ -187,10 +185,6 @@ C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\compressed\vkyvkpcyvz-{0}
 C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\compressed\1w9odgixxf-{0}-h1s4sie4z3-h1s4sie4z3.gz
 C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\compressed\7aav1vp5sb-{0}-63fj8s7r0e-63fj8s7r0e.gz
 C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\compressed\6upft1z3t1-{0}-0j3bgjxly4-0j3bgjxly4.gz
-C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\compressed\yz2sikrela-{0}-pr21mg9rrw-pr21mg9rrw.gz
-C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\compressed\lroyj931pk-{0}-abdmv1u4y3-abdmv1u4y3.gz
-C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\compressed\2iypmy8pic-{0}-ej96puwv3k-ej96puwv3k.gz
-C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\compressed\dyq40fbe2r-{0}-cj5793hgrt-cj5793hgrt.gz
 C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\compressed\sjkd673h24-{0}-7iayeuoz0p-7iayeuoz0p.gz
 C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\compressed\0y4vcqnd6j-{0}-7iayeuoz0p-7iayeuoz0p.gz
 C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\staticwebassets.build.json
@@ -617,3 +611,8 @@ C:\LP3.BlazorServer\LP3.BlazorServer-main\obj\Debug\net10.0\refint\LP3.BlazorSer
 C:\LP3.BlazorServer\LP3.BlazorServer-main\obj\Debug\net10.0\LP3.BlazorServer.pdb
 C:\LP3.BlazorServer\LP3.BlazorServer-main\obj\Debug\net10.0\LP3.BlazorServer.genruntimeconfig.cache
 C:\LP3.BlazorServer\LP3.BlazorServer-main\obj\Debug\net10.0\ref\LP3.BlazorServer.dll
+C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\compressed\kr42gcgdt0-{0}-w7mf952350-w7mf952350.gz
+C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\compressed\yz2sikrela-{0}-7ozcgj5zvk-7ozcgj5zvk.gz
+C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\compressed\lroyj931pk-{0}-cyz5k529gx-cyz5k529gx.gz
+C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\compressed\2iypmy8pic-{0}-ne14ti1q68-ne14ti1q68.gz
+C:\LP3.BlazorServer\LP3.BlazorServer\obj\Debug\net10.0\compressed\dyq40fbe2r-{0}-ig5xotzpx5-ig5xotzpx5.gz

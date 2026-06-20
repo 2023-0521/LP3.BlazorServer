@@ -12,6 +12,7 @@ public class CursoService(ICursoRepository cursoRepository) : ICursoService
         var cursos = await cursoRepository.ListAsync();
         return cursos.Select(c => new CursoDto
         {
+            Id = c.Id,
             Nombre = c.Nombre,
             Codigo = c.Codigo,
             Creditos = c.Creditos,
@@ -24,6 +25,7 @@ public class CursoService(ICursoRepository cursoRepository) : ICursoService
         var curso = await cursoRepository.GetByIdAsync(id);
         return curso == null ? null : new CursoDto
         {
+            Id = curso.Id,
             Nombre = curso.Nombre,
             Codigo = curso.Codigo,
             Creditos = curso.Creditos,
@@ -36,6 +38,7 @@ public class CursoService(ICursoRepository cursoRepository) : ICursoService
         var curso = await cursoRepository.GetByCodigoAsync(codigo);
         return curso == null ? null : new CursoDto
         {
+            Id = curso.Id,
             Nombre = curso.Nombre,
             Codigo = curso.Codigo,
             Creditos = curso.Creditos,

@@ -2549,11 +2549,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\LP3.BlazorServer\\LP3.BlazorServer-main\\LP3.BlazorServer.csproj",
+      "projectUniqueName": "C:\\LP3.BlazorServer\\LP3.BlazorServer\\LP3.BlazorServer.csproj",
       "projectName": "LP3.BlazorServer",
-      "projectPath": "C:\\LP3.BlazorServer\\LP3.BlazorServer-main\\LP3.BlazorServer.csproj",
+      "projectPath": "C:\\LP3.BlazorServer\\LP3.BlazorServer\\LP3.BlazorServer.csproj",
       "packagesPath": "C:\\Users\\kjgam\\.nuget\\packages\\",
-      "outputPath": "C:\\LP3.BlazorServer\\LP3.BlazorServer-main\\obj\\",
+      "outputPath": "C:\\LP3.BlazorServer\\LP3.BlazorServer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kjgam\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3054,5 +3054,17 @@
         }
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"SQLitePCLRaw.lib.e_sqlite3\" 2.1.11 tiene una vulnerabilidad de gravedad alta conocida, https://github.com/advisories/GHSA-2m69-gcr7-jv3q",
+      "libraryId": "SQLitePCLRaw.lib.e_sqlite3",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
 }

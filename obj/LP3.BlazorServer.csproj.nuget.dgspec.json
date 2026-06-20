@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\LP3.BlazorServer\\LP3.BlazorServer-main\\LP3.BlazorServer.csproj": {}
+    "C:\\LP3.BlazorServer\\LP3.BlazorServer\\LP3.BlazorServer.csproj": {}
   },
   "projects": {
-    "C:\\LP3.BlazorServer\\LP3.BlazorServer-main\\LP3.BlazorServer.csproj": {
+    "C:\\LP3.BlazorServer\\LP3.BlazorServer\\LP3.BlazorServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\LP3.BlazorServer\\LP3.BlazorServer-main\\LP3.BlazorServer.csproj",
+        "projectUniqueName": "C:\\LP3.BlazorServer\\LP3.BlazorServer\\LP3.BlazorServer.csproj",
         "projectName": "LP3.BlazorServer",
-        "projectPath": "C:\\LP3.BlazorServer\\LP3.BlazorServer-main\\LP3.BlazorServer.csproj",
+        "projectPath": "C:\\LP3.BlazorServer\\LP3.BlazorServer\\LP3.BlazorServer.csproj",
         "packagesPath": "C:\\Users\\kjgam\\.nuget\\packages\\",
-        "outputPath": "C:\\LP3.BlazorServer\\LP3.BlazorServer-main\\obj\\",
+        "outputPath": "C:\\LP3.BlazorServer\\LP3.BlazorServer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kjgam\\AppData\\Roaming\\NuGet\\NuGet.Config",

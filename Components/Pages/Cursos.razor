@@ -1,9 +1,9 @@
 @page "/cursos"
+@rendermode InteractiveServer
 @using LP3.BlazorServer.Application.Services
 @using LP3.BlazorServer.Shared.DTOs
 
 @inject ICursoService CursoService
-@inject Microsoft.JSInterop.IJSRuntime JSRuntime
 
 <div class="container mt-4">
     <h1>📚 Gestión de Cursos</h1>
@@ -57,7 +57,8 @@
 
     <div class="card-body">
         <EditForm Model="nuevoCurso"
-                OnValidSubmit="RegistrarCurso">
+                OnValidSubmit="RegistrarCurso"
+                FormName="RegistrarCursoForm">
 
             <DataAnnotationsValidator />
             <ValidationSummary />
@@ -82,6 +83,16 @@
                             @bind-Value="nuevoCurso.Creditos" />
                 <ValidationMessage For="() => nuevoCurso.Creditos" />
             </div>
+
+            <div class="form-check mb-3">
+                    <InputCheckbox class="form-check-input"
+                                   @bind-Value="nuevoCurso.Activo" />
+                    <label class="form-check-label">
+                        Activo
+                    </label>
+                </div>
+
+                
 
             <button type="submit"
                     class="btn btn-success">
@@ -120,7 +131,6 @@
                         <th>Código</th>
                         <th>Créditos</th>
                         <th>Activo</th>
-                        <th>Acciones</th>
                     </tr>
                 </thead>
 
@@ -136,7 +146,12 @@
                             <td>
                                 <button class="btn btn-warning btn-sm"
                                         @onclick="() => SeleccionarCurso(curso)">
-                                    Editar
+                                    ✏️ Editar
+                                </button>
+
+                                <button class="btn btn-sm btn-danger"
+                                    @onclick="() => SolicitarEliminar(curso)">
+                                    🗑Eliminar
                                 </button>
                             </td>
                         </tr>
@@ -158,7 +173,8 @@
 
         <div class="card-body">
             <EditForm Model="cursoEditar"
-                      OnValidSubmit="ActualizarCurso">
+                      OnValidSubmit="ActualizarCurso"
+                      FormName="EditarCursoForm">
 
                 <DataAnnotationsValidator />
                 <ValidationSummary />
@@ -220,7 +236,7 @@
                 <div class="d-flex justify-content-between align-items-center mb-2">
                     <span>@curso.Nombre (@curso.Codigo)</span>
                     <button class="btn btn-danger btn-sm"
-                            @onclick="() => ConfirmarEliminar(curso)">
+                            @onclick="() => SolicitarEliminar(curso)">
                         Eliminar
                     </button>
                 </div>
@@ -239,6 +255,28 @@
 
 @*finaliza el conteiner*@
 </div>
+
+@* Modal de confirmación de eliminación *@
+@if (mostrarModalEliminar && cursoAEliminar != null)
+{
+    <div class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.5);">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmar Eliminación</h5>
+                    <button type="button" class="btn-close" aria-label="Close" @onclick="CancelarEliminar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Desea eliminar '@cursoAEliminar.Nombre'?</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" @onclick="CancelarEliminar">No</button>
+                    <button class="btn btn-danger" @onclick="ConfirmarEliminarAsync">Si</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
 
 
 @code {
@@ -268,17 +306,25 @@
 
     private async Task RegistrarCurso()
     {
-        var resultado = await CursoService.CreateAsync(nuevoCurso);
+        if (string.IsNullOrWhiteSpace(nuevoCurso.Nombre) ||
+            string.IsNullOrWhiteSpace(nuevoCurso.Codigo) ||
+            nuevoCurso.Creditos <= 0)
+        {
+            mensajeRegistro = "⚠️ Por favor completa todos los campos requeridos";
+            return;
+        }
+
+        bool resultado = await CursoService.CreateAsync(nuevoCurso);
 
         if (resultado)
         {
-            mensajeRegistro = "✅ Curso registrado correctamente.";
-            nuevoCurso = new CursoDto();
-            await CargarCursos();
+            mensajeRegistro = "✅ Curso registrado exitosamente";
+            nuevoCurso = new(); // Limpiar formulario
+            await CargarCursos(); // Actualizar lista
         }
         else
         {
-            mensajeRegistro = "❌ Error al registrar el curso.";
+            mensajeRegistro = "❌ Error al registrar el Curso. Verifique nuevamente sus Datos";
         }
     }
 
@@ -327,16 +373,30 @@
 
 
     private string mensajeEliminacion = string.Empty;
-   private async Task ConfirmarEliminar(CursoDto curso)
-{
-    var confirmacion = await JSRuntime.InvokeAsync<bool>(
-        "confirm",
-        $"¿Estás seguro de eliminar el curso '{curso.Nombre}'?"
-    );
+    private CursoDto? cursoAEliminar;
+    private bool mostrarModalEliminar = false;
 
-    if (confirmacion)
+    private void SolicitarEliminar(CursoDto curso)
     {
-        var resultado = await CursoService.DeleteAsync(curso.Id);
+        cursoAEliminar = curso;
+        mostrarModalEliminar = true;
+    }
+
+    private void CancelarEliminar()
+    {
+        cursoAEliminar = null;
+        mostrarModalEliminar = false;
+    }
+
+    private async Task ConfirmarEliminarAsync()
+    {
+        if (cursoAEliminar == null)
+        {
+            mostrarModalEliminar = false;
+            return;
+        }
+
+        var resultado = await CursoService.DeleteAsync(cursoAEliminar.Id);
 
         if (resultado)
         {
@@ -347,7 +407,9 @@
         {
             mensajeEliminacion = "❌ Error al eliminar el curso.";
         }
+
+        cursoAEliminar = null;
+        mostrarModalEliminar = false;
     }
-}
 
 }
